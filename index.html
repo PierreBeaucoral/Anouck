@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anouck Daubrée – PhD Candidate in Development Economics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Personal website of Anouck Daubrée, PhD candidate in Development Economics working on legal gender equality and government revenues."
+  />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Anouck Daubrée – PhD Candidate in Development Economics" />
+  <meta property="og:description" content="Research on legal gender equality and government revenues." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://<USERNAME>.github.io/anouck-daubree-site/" />
+  <meta property="og:image" content="https://<USERNAME>.github.io/anouck-daubree-site/assets/anouck-profile.jpg" />
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-alt: #101628;
+      --accent: #f49fb6;
+      --accent-soft: rgba(244, 159, 182, 0.15);
+      --accent-strong: #ff6f91;
+      --text-main: #f9fafb;
+      --text-muted: #a5b4fc;
+      --card-bg: #111827;
+      --border-subtle: rgba(148, 163, 184, 0.3);
+      --pill-bg: rgba(129, 140, 248, 0.15);
+      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.7);
+      --radius-xl: 22px;
+      --radius-pill: 999px;
+      --max-width: 1080px;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top left, #1f2937, #020617 55%);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.92),
+        rgba(15, 23, 42, 0.75),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.6rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #fef3c7, var(--accent));
+      box-shadow: 0 0 18px rgba(244, 159, 182, 0.9);
+    }
+
+    .nav-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      padding: 0;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-pill);
+      color: #e5e7eb;
+      opacity: 0.85;
+      transition: background 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+    }
+
+    nav a:hover {
+      background: rgba(148, 163, 184, 0.15);
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      border-radius: var(--radius-pill);
+      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+      padding: 0.4rem 0.9rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111827;
+      box-shadow: 0 8px 20px rgba(248, 113, 154, 0.65);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .nav-cta span {
+      font-size: 0.9rem;
+    }
+
+    .nav-cta:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 1.4rem 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 2.5rem;
+      }
+      nav ul {
+        display: none; /* keep it simple on mobile */
+      }
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.25rem 0.8rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-tagline-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 12px rgba(74, 222, 128, 0.9);
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 3.1vw, 2.7rem);
+      margin: 0 0 0.6rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      color: #cbd5f5;
+      max-width: 32rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      border-radius: var(--radius-pill);
+      background: var(--pill-bg);
+      padding: 0.25rem 0.7rem;
+      border: 1px solid rgba(129, 140, 248, 0.5);
+      font-size: 0.8rem;
+      color: #e0e7ff;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease,
+        border-color 0.1s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #111827;
+      box-shadow: 0 16px 34px rgba(248, 113, 154, 0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.8);
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.4);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(248, 250, 252, 0.8);
+    }
+
+    .hero-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note b {
+      color: #e5e7eb;
+    }
+
+    .hero-right {
+      justify-self: center;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .profile-card {
+      border-radius: 26px;
+      background: radial-gradient(circle at top, #1f2937, #020617 70%);
+      padding: 1.2rem 1.3rem 1.4rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(
+          circle at 0% 0%,
+          rgba(244, 159, 182, 0.16),
+          transparent 60%
+        ),
+        radial-gradient(
+          circle at 100% 100%,
+          rgba(129, 140, 248, 0.15),
+          transparent 50%
+        );
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .profile-top {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #4f46e5, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #f9fafb;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .avatar span {
+      transform: translateY(1px);
+    }
+
+    .profile-meta h2 {
+      margin: 0;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e5e7eb;
+    }
+
+    .profile-meta p {
+      margin: 0.2rem 0 0.4rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.76rem;
+    }
+
+    .profile-tag {
+      padding: 0.1rem 0.6rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      color: #e0e7ff;
+    }
+
+    .profile-bottom {
+      position: relative;
+      z-index: 1;
+      margin-top: 1.1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      display: grid;
+      grid-template-columns: 1.2fr 1.1fr;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .profile-bottom strong {
+      color: #e5e7eb;
+    }
+
+    .profile-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.2rem;
+    }
+
+    .profile-pill {
+      padding: 0.15rem 0.55rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      white-space: nowrap;
+    }
+
+    .profile-contact {
+      text-align: right;
+      align-self: center;
+    }
+
+    .profile-contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+
+    .profile-contact a:hover {
+      background: rgba(15, 23, 42, 1);
+    }
+
+    /* Sections */
+
+    section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.4rem 2.3rem;
+    }
+
+    section + section {
+      border-top: 1px solid rgba(30, 64, 175, 0.5);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #e5e7eb;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 800px) {
+      .two-columns {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      padding: 1.1rem 1.2rem;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+    }
+
+    .card + .card {
+      margin-top: 0.8rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 0.16rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+    }
+
+    .timeline {
+      border-left: 1px solid rgba(148, 163, 184, 0.6);
+      margin-left: 0.45rem;
+      padding-left: 1rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1rem;
+      padding-left: 0.4rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.25rem;
+      top: 0.35rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(244, 159, 182, 0.9);
+    }
+
+    .timeline-item time {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 0.12rem;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 0.15rem;
+      font-size: 0.96rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #e5e7eb;
+    }
+
+    .timeline-item .meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .list-clean {
+      margin: 0;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .list-clean li + li {
+      margin-top: 0.35rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.6);
+      padding: 1.2rem 1.4rem 1.6rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .footer-links a {
+      opacity: 0.9;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav-inner">
+        <div class="nav-left">
+          <div class="logo-dot"></div>
+          <div class="nav-name">Anouck Daubrée</div>
+        </div>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#talks">Talks &amp; Outreach</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+          </ul>
+        </nav>
+        <a class="nav-cta" href="#contact">
+          <span>Get in touch</span>
+          <span>↗</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div>
+          <div class="hero-tagline">
+            <span class="hero-tagline-dot"></span>
+            <span>PhD in Development Economics &middot; Gender &amp; Taxation</span>
+          </div>
+          <h1>Anouck Daubrée</h1>
+          <p class="hero-subtitle">
+            PhD candidate in Development Economics at CERDI &mdash; Université
+            Clermont Auvergne, working on how legal gender equality shapes
+            governments’ tax revenues.
+          </p>
+
+          <div class="hero-meta">
+            <span>🎓 PhD project: legal gender equality &amp; government revenues</span>
+            <span>·</span>
+            <span>📍 Clermont-Ferrand, France</span>
+          </div>
+
+          <div class="hero-buttons">
+            <a class="btn-primary" href="assets/CV_Anouck_Daubree.pdf">
+              <span>Download CV</span>
+              <span>⬇</span>
+            </a>
+            <a class="btn-ghost" href="#publications">
+              <span>View publications</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Currently supervised by <b>Grégoire Rota-Graziosi</b> at
+            <b>CERDI</b>, Université Clermont Auvergne.
+          </p>
+        </div>
+
+        <div class="hero-right">
+          <aside class="profile-card" aria-label="Profile summary">
+            <div class="profile-top">
+              <div class="avatar" aria-hidden="true">
+                <span>AD</span>
+              </div>
+              <div class="profile-meta">
+                <h2>Profile</h2>
+                <p>Doctoral researcher &middot; Development Economics</p>
+                <div class="profile-tags">
+                  <span class="profile-tag">Gender &amp; the law</span>
+                  <span class="profile-tag">Tax capacity</span>
+                  <span class="profile-tag">Developing countries</span>
+                </div>
+              </div>
+            </div>
+            <div class="profile-bottom">
+              <div>
+                <div><strong>Affiliation</strong></div>
+                <div>CERDI, Université Clermont Auvergne</div>
+                <div class="profile-pills">
+                  <span class="profile-pill">CNRS-IRD joint research centre</span>
+                  <span class="profile-pill">Clermont-Ferrand</span>
+                </div>
+              </div>
+              <div class="profile-contact">
+                <div><strong>Contact</strong></div>
+                <a href="mailto:Anouck.DAUBREE@doctorant.uca.fr">
+                  ✉︎ Email Anouck
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-header">
+          <h2 class="section-title">About</h2>
+          <p class="section-subtitle">
+            Short bio, current PhD project, and how her work fits within debates
+            on gender equality, fiscal systems and development.
+          </p>
+        </div>
+
+        <div class="two-columns">
+          <div class="card">
+            <h3>Short bio</h3>
+            <p>
+              I am a PhD candidate in Development Economics at
+              <strong>CERDI</strong>, Université Clermont Auvergne (France).
+              My research studies how reforms that strengthen
+              <strong>legal gender equality</strong> affect
+              <strong>tax systems</strong> and public revenues in developing
+              countries.
+            </p>
+            <p>
+              I am particularly interested in how family, labour and property
+              laws shape women’s economic opportunities and, in turn, the tax
+              base and fiscal capacity of states.
+            </p>
+            <div class="chip-row" style="margin-top: 0.8rem;">
+              <span class="chip">Legal gender equality</span>
+              <span class="chip">Tax capacity &amp; revenues</span>
+              <span class="chip">Institutions &amp; development</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>PhD project</h3>
+            <p style="margin-bottom: 0.4rem;">
+              <strong>Title:</strong> Legal gender equality and government revenues
+            </p>
+            <p style="margin-bottom: 0.4rem;">
+              <strong>Supervisor:</strong> Grégoire Rota-Graziosi (CERDI, UCA)
+            </p>
+            <p>
+              The thesis combines cross-country panel data on gendered laws with
+              fiscal and macroeconomic indicators to quantify how removing legal
+              barriers for women influences tax effort, tax composition and
+              state capacity in developing and emerging economies.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESEARCH -->
+      <section id="research">
+        <div class="section-header">
+          <h2 class="section-title">Research</h2>
+          <p class="section-subtitle">
+            Ongoing projects on gender equality before the law, tax capacity,
+            and the fiscal consequences of closing legal gaps.
+          </p>
+        </div>
+
+        <div class="two-columns">
+          <div>
+            <div class="card">
+              <h3>Research interests</h3>
+              <ul class="list-clean">
+                <li>Legal gender equality and economic development</li>
+                <li>Tax capacity, tax gaps and domestic resource mobilisation</li>
+                <li>
+                  Political economy of fiscal reforms in low- and middle-income
+                  countries
+                </li>
+                <li>Institutions, rights, and state-building</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Methods &amp; tools</h3>
+              <p>
+                Empirical work relies on cross-country panel datasets, legal
+                indices of gender equality, and tax performance indicators. I
+                use econometric techniques suited for policy reforms, including
+                panel regressions, event-study designs and robustness checks to
+                institutional heterogeneity.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <h3>Selected ongoing projects</h3>
+              <ul class="list-clean">
+                <li>
+                  <strong>Gender-equal laws and tax revenues:</strong> how
+                  closing legal gaps in family, labour, and property codes
+                  influences tax effort and the structure of revenues.
+                </li>
+                <li>
+                  <strong>Fiscal space and women’s economic empowerment:</strong>
+                  links between women’s legal rights, formal employment and the
+                  size of the tax base.
+                </li>
+              </ul>
+              <p style="margin-top: 0.7rem; font-size: 0.82rem; color: var(--text-muted);">
+                Drafts and working papers will be posted here as they become
+                available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications">
+        <div class="section-header">
+          <h2 class="section-title">Publications</h2>
+          <p class="section-subtitle">
+            Policy notes and research outputs. Links to full texts are provided
+            when available.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Peer-reviewed &amp; policy publications</h3>
+          <ol class="list-clean">
+            <li>
+              <strong>La capacité fiscale de l’Union économique et monétaire
+                ouest-africaine</strong> (2024).  
+              Alou Adessé Dama, Anouck Daubrée, Grégoire Rota-Graziosi.  
+              <em>Ferdi Note brève B272</em>.  
+              <span style="font-size:0.85rem;">
+                Focuses on measuring tax capacity in WAEMU and identifying
+                drivers of tax gaps to support domestic resource mobilisation
+                strategies.
+              </span>
+            </li>
+            <!-- Add new publications here -->
+          </ol>
+        </div>
+
+        <div class="card" style="margin-top: 1rem;">
+          <h3>Working papers &amp; drafts</h3>
+          <ul class="list-clean">
+            <li>
+              <em>Legal gender equality and government revenues</em> (PhD
+              project, in progress).
+            </li>
+            <li>
+              Additional working papers will be listed here as soon as they are
+              publicly available.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TALKS & OUTREACH -->
+      <section id="talks">
+        <div class="section-header">
+          <h2 class="section-title">Talks &amp; Outreach</h2>
+          <p class="section-subtitle">
+            Seminars, roundtables and public events related to gender equality,
+            taxation and development.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <time>2025</time>
+            <h3>
+              Roundtable &ldquo;Les droits des femmes dans le monde&rdquo;
+            </h3>
+            <p>
+              Participant in a public roundtable on women’s rights worldwide,
+              organised in Clermont-Ferrand as part of the Journée des cultures
+              du monde.
+            </p>
+            <div class="meta">
+              Public outreach &middot; Gender equality &middot; Rights and
+              development
+            </div>
+          </article>
+
+          <!-- Example template for future entries
+          <article class="timeline-item">
+            <time>202X</time>
+            <h3>Seminar title</h3>
+            <p>Venue, city. Short description of topic and audience.</p>
+            <div class="meta">Type · Field · Co-authors (if any)</div>
+          </article>
+          -->
+        </div>
+      </section>
+
+      <!-- TEACHING & OTHER ACTIVITIES -->
+      <section id="teaching">
+        <div class="section-header">
+          <h2 class="section-title">Teaching &amp; Service</h2>
+          <p class="section-subtitle">
+            Courses, tutorials and student initiatives around economics,
+            development and gender equality.
+          </p>
+        </div>
+
+        <div class="two-columns">
+          <div>
+            <div class="card">
+              <h3>Teaching</h3>
+              <p>
+                Teaching activities and tutorial responsibilities will be listed
+                here as they are confirmed. Topics are expected to include
+                development economics, public economics and quantitative methods.
+              </p>
+              <ul class="list-clean">
+                <li>Teaching assistant in economics (details TBA)</li>
+                <li>Guest interventions on gender, rights and taxation (TBA)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <h3>Student &amp; departmental activities</h3>
+              <p>
+                Actively involved in the student life of the Economics School,
+                including student associations and events connecting students and
+                researchers.
+              </p>
+              <ul class="list-clean">
+                <li>
+                  Participation in activities of the Economics School’s student
+                  associations (e.g. AMADE CERDI / BDE events).
+                </li>
+                <li>
+                  Support to events promoting development economics and gender
+                  equality in policy debates.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            Best ways to reach Anouck for academic questions, collaborations or
+            media enquiries.
+          </p>
+        </div>
+
+        <div class="two-columns">
+          <div class="card">
+            <h3>Email &amp; institutional address</h3>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:Anouck.DAUBREE@doctorant.uca.fr">
+                Anouck.DAUBREE@doctorant.uca.fr
+              </a>
+            </p>
+            <p>
+              <strong>Affiliation:</strong><br />
+              CERDI, UMR 6587 (CNRS &amp; IRD)<br />
+              Université Clermont Auvergne
+            </p>
+            <p>
+              <strong>Office:</strong><br />
+              26 avenue Léon-Blum, 4<sup>e</sup> étage, bureau 436<br />
+              63000 Clermont-Ferrand, France
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Elsewhere</h3>
+            <ul class="list-clean">
+              <li>
+                CERDI profile:
+                <a href="https://cerdi.uca.fr/version-francaise/unite/lequipe/annuaire/anouck-daubree#/">
+                  CERDI – Université Clermont Auvergne
+                </a>
+              </li>
+              <li>
+                PhD projects page:
+                <a href="https://cerdi.uca.fr/english-version/phd/current-phd-projects">
+                  Current PhD projects at CERDI
+                </a>
+              </li>
+              <!-- Optional:
+              <li>
+                LinkedIn:
+                <a href="https://www.linkedin.com/in/…">LinkedIn profile</a>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          © <span id="year"></span> Anouck Daubrée. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="#top">Back to top ↑</a>
+          <span>·</span>
+          <a
+            href="https://cerdi.uca.fr/version-francaise/unite/lequipe/annuaire/anouck-daubree#/"
+          >
+            CERDI profile
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Update year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
